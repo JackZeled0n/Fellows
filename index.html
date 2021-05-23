@@ -22,24 +22,26 @@
 
   <div class="container my-5">
     <h2 class='mb-3 text-center'>Fellows</h2>
-    <table id="fellowsTable" class="table" width="100%">
-      <thead>
-        <tr>
-          <th class="th-sm">Nombres
-          </th>
-          <th class="th-sm">Apellidos
-          </th>
-          <th class="th-sm">Colegio
-          </th>
-          <th class="th-sm">Universidad
-          </th>
-          <th class="th-sm">Carrera de interés
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+    <div class="table-responsive-sm table-responsive-md">
+      <table id="fellowsTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th class="th-sm">Nombres
+            </th>
+            <th class="th-sm">Apellidos
+            </th>
+            <th class="th-sm">Colegio
+            </th>
+            <th class="th-sm">Universidad
+            </th>
+            <th class="th-sm">Carrera de interés
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
 
   </div>
 
@@ -63,6 +65,7 @@
         success: function (data) {
           $('#fellowsTable').DataTable({
             data: data.feed.entry,
+            pagingType: 'simple_numbers',
             columns: [
               { 'data': 'gsx$nombre.$t' },
               { 'data': 'gsx$apellido.$t' },
