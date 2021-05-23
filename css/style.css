@@ -1,0 +1,48 @@
+:root {
+    --blue-tci: #00447e;
+    --red-tci: #bc0723;
+}
+
+body {
+    background-color: rgba(0, 68, 126, 0.1);
+}
+
+.separate {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.table-text-size {
+    font-size: 18px;
+    font-weight: 390;
+}
+
+.border-left {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.border-right {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.background-blue-tci {
+    background-color: var(--blue-tci);
+}
+
+.background-red-tci {
+    background-color: var(--red-tci);
+}
+
+.text-blue-tci {
+    color: var(--blue-tci);
+}
+
+.text-red-tci {
+    color: var(--red-tci);
+}
+
+.rounded-card {
+    border-radius: 25px;
+}
