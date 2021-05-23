@@ -3,6 +3,10 @@
     --red-tci: #bc0723;
 }
 
+body {
+    background-color: rgba(0, 68, 126, 0.1);
+}
+
 .separate {
     border-collapse: separate;
     border-spacing: 0 15px;
