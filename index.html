@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Fellows</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- MDBootstrap Datatables  -->
+  <link href="css/addons/datatables2.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container my-5">
+    <h2 class='mb-3 text-center'>Fellows</h2>
+    <div class="table-responsive-sm table-responsive-md">
+      <table id="fellowsTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th class="th-sm">Nombres
+            </th>
+            <th class="th-sm">Apellidos
+            </th>
+            <th class="th-sm">Colegio
+            </th>
+            <th class="th-sm">Universidad
+            </th>
+            <th class="th-sm">Carrera de interés
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="js/addons/datatables2.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://spreadsheets.google.com/feeds/list/1cFTxJetCjBYhntghE0G_TGTyQtWjjYZGyVcDdwb1YTE/od6/public/values?alt=json",
+        type: "GET",
+        datatype: 'json',
+        success: function (data) {
+          $('#fellowsTable').DataTable({
+            data: data.feed.entry,
+            pagingType: 'simple_numbers',
+            columns: [
+              { 'data': 'gsx$nombre.$t' },
+              { 'data': 'gsx$apellido.$t' },
+              { 'data': 'gsx$colegio.$t' },
+              { 'data': 'gsx$universidad.$t' },
+              { 'data': 'gsx$carreradeinterés.$t' },
+            ]
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
