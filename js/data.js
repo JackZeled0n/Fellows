@@ -7,22 +7,23 @@ $(document).ready(function () {
       $("#fellowsTable").DataTable({
         data: data.feed.entry,
         pagingType: "simple_numbers",
-        pageLength: 10,
+        pageLength: 100,
         responsive: true,
         columns: [
           {
             render: function (data, type, full, meta) {
               return (
-                "<strong class='text-blue-tci'>Full name:</strong> " +
+                "<p class='text-center'>" +
                 full.gsx$nombre.$t +
                 " " +
                 full.gsx$apellido.$t +
-                "<br><strong class='text-blue-tci'>School:</strong> " +
+                "</p><p class='text-center'>" +
                 full.gsx$colegio.$t +
-                "<br><strong class='text-blue-tci'>University:</strong> " +
+                "</p><p class='text-center'>" +
+                full.gsx$carreradeinterés.$t +
+                "</p><p class='text-center'>" +
                 full.gsx$universidad.$t +
-                "<br><strong class='text-blue-tci'>Career of interest:</strong> " +
-                full.gsx$carreradeinterés.$t
+                "</p>"
               );
             },
           },
