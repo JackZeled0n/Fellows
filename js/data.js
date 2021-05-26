@@ -8,6 +8,7 @@ $(document).ready(function () {
         data: data.feed.entry,
         pagingType: "simple_numbers",
         pageLength: 100,
+        lengthChange: false,
         responsive: true,
         columns: [
           {
