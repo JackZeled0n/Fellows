@@ -7,7 +7,7 @@ $(document).ready(function () {
       $("#fellowsTable").DataTable({
         data: data.feed.entry,
         pagingType: "simple_numbers",
-        pageLength: 100,
+        paging: false,
         lengthChange: false,
         responsive: true,
         ordering: false,
