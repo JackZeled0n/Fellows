@@ -18,9 +18,9 @@ $(document).ready(function () {
             render: function (data, type, full, meta) {
               return (
                 "<p class='text-center'>" +
-                full.gsx$apellido.$t +
-                " " +
                 full.gsx$nombre.$t +
+                " " +
+                full.gsx$apellido.$t +
                 "</p><p class='text-center'>" +
                 full.gsx$colegio.$t +
                 "</p><p class='text-center'>" +
