@@ -10,6 +10,7 @@ $(document).ready(function () {
         pageLength: 100,
         lengthChange: false,
         responsive: true,
+        ordering: false,
         language: {
           search: "Buscar:",
         },
